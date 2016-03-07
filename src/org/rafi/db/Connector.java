@@ -18,7 +18,7 @@ public class Connector {
 		try 
 		{
 			con = establishConnection();
-			pstmt = con.prepareStatement("SELECT uname,aes_decrypt(password,\"dimp\") FROM login WHERE uname = ? ");
+			pstmt = con.prepareStatement("SELECT uname,password FROM login WHERE uname = ? ");
 			pstmt.setString(1,uname);
 			//pstmt.setString(2, password);
 			ResultSet rs = pstmt.executeQuery();
@@ -109,7 +109,7 @@ public class Connector {
 		try 
 		{
 			con = establishConnection();
-			pstmt = con.prepareStatement("insert into login (uname,password, emaiId, phonenum, gender) values (?,aes_encrypt(?,\"dimp\"),?,?,?)");
+			pstmt = con.prepareStatement("insert into login (uname,password, emaiId, phonenum, gender) values (?,?,?,?,?)");
 			pstmt.setString(1,uname);
 			pstmt.setString(2, password);
 			pstmt.setString(3, emaiId);
