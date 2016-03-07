@@ -210,7 +210,7 @@ public class Connector {
 		try
 		{
 			Class.forName("com.mysql.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dimpynew","root","theo");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dimpy","root","theo");
 		}
 		catch(ClassNotFoundException ex)
 		{
